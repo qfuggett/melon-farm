@@ -68,17 +68,17 @@ public class Main {
 
 	public static void getSellabilityReport(Melon[] melons){
 			
-		for (int i = 0; i < melons.length(); i++) {
+		for (int i = 0; i < melons.length; i++) {
 
 			Melon currentMelon = melons[i];
 
-			String name = melons[4];
-			String field = melons[3];
+			String name = currentMelon.harvester;
+			int field = currentMelon.field;
 
-			Boolean sellable = melons.isSellable;
-			String sell;
+			Boolean sellable = currentMelon.isSellable();
+			String sell = "";
 			if (sellable == true) {
-					sell = "(CAN BE SOLD)";
+				sell = "(CAN BE SOLD)";
 			} else if (sellable == false) {
 				sell = "(NOT SELLABLE)";
 			}
